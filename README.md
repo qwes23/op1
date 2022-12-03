@@ -27,8 +27,10 @@
 ![](images/2.png)Страница регистрации:
 
 ![](images/5.png)![](images/2.png)
+![](images/2.png)
 
-![](images/2.png)Страница входа![](images/6.png)
+Страница входа
+![](images/6.png)
 
 ![](images/2.png)Страница авторизованного пользователя:
 
