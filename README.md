@@ -73,7 +73,7 @@
 ![](images/11.png)
 # **Значимые фрагменты кода**
 Фрагмент кода представлений:
-
+```python
     class MainPageView(TemplateView):
     `    `template\_name = 'authorization/home\_page.html'
 
@@ -97,10 +97,10 @@
     def logout\_user(request):
       logout(request)
       return redirect('home')
-
+```
 
 Фрагмент кода модели пользователя
-
+```python
     class CustomUser(AbstractUser):
       username = models.CharField(max\_length=12, unique=True)
       USERNAME\_FIELD = 'username'
@@ -111,10 +111,10 @@
     def save(self, \*args, \*\*kwargs):
       self.crew\_password = make\_password(self.password)
       super(CustomUser, self).save(\*args, \*\*kwargs)
-
+```
 
 Фрагмент кода html форм для авторизации и регистрации:
-
+```python
       class CustomUserCreationForm(UserCreationForm):
             username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}), label='Логин')
             password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}), label='Пароль')
@@ -127,4 +127,4 @@
     class LoginUserForm(AuthenticationForm):
       username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}), label='Логин')
       password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}), label='Пароль')
-
+```
