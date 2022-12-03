@@ -75,7 +75,7 @@
 Фрагмент кода представлений:
 ```python
     class MainPageView(TemplateView):
-    `    `template_name = 'authorization/home_page.html'
+        template_name = 'authorization/home_page.html'
 
     class UserCreateView(CreateView):
       model = CustomUser
