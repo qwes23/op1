@@ -75,26 +75,26 @@
 Фрагмент кода представлений:
 ```python
     class MainPageView(TemplateView):
-    `    `template\_name = 'authorization/home\_page.html'
+    `    `template_name = 'authorization/home_page.html'
 
     class UserCreateView(CreateView):
       model = CustomUser
-      form\_class = CustomUserCreationForm
-      template\_name = 'authorization/registration\_page.html'
-      success\_url = reverse\_lazy('login\_page')
+      form_class = CustomUserCreationForm
+      template_name = 'authorization/registration_page.html'
+      success_url = reverse_lazy('login_page')
       
     class UserLogin(LoginView):
-      form\_class = LoginUserForm
-      template\_name = 'authorization/login\_page.html'
-      redirect\_authenticated\_user = reverse\_lazy('login\_page')
+      form_class = LoginUserForm
+      template_name = 'authorization/login_page.html'
+      redirect_authenticated\_user = reverse_lazy('login\_page')
 
     class ChangePasswordView(PasswordChangeView):
-      form\_class = PasswordChangeForm
-      template\_name = 'authorization/change\_password.html'
-      success\_url = reverse\_lazy('home')
+      form_class = PasswordChangeForm
+      template_name = 'authorization/change_password.html'
+      success_url = reverse_lazy('home')
 
 
-    def logout\_user(request):
+    def logout_user(request):
       logout(request)
       return redirect('home')
 ```
@@ -102,15 +102,15 @@
 Фрагмент кода модели пользователя
 ```python
     class CustomUser(AbstractUser):
-      username = models.CharField(max\_length=12, unique=True)
-      USERNAME\_FIELD = 'username'
+      username = models.CharField(max_length=12, unique=True)
+      USERNAME_FIELD = 'username'
 
-    def *\_\_str\_\_*(self):
+    def __str__(self):
       return self.username
 
-    def save(self, \*args, \*\*kwargs):
-      self.crew\_password = make\_password(self.password)
-      super(CustomUser, self).save(\*args, \*\*kwargs)
+    def save(self, *args, **kwargs):
+      self.crew_password = make_password(self.password)
+      super(CustomUser, self).save(*args, **kwargs)
 ```
 
 Фрагмент кода html форм для авторизации и регистрации:
