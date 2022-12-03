@@ -115,8 +115,8 @@ class CustomUser(AbstractUser):
 
 Фрагмент кода html форм для авторизации и регистрации:
 
-class CustomUserCreationForm(UserCreationForm):
-`    `username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}), label='Логин')
+      class CustomUserCreationForm(UserCreationForm):
+      username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Логин'}), label='Логин')
 `    `password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Пароль'}), label='Пароль')
 `    `password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Повторение пароля'}), label='Повторение пароля')
 
