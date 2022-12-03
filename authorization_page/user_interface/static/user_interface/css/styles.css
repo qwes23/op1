@@ -1,0 +1,13 @@
+main {
+  display: block;
+  border-style: solid;
+  border-radius: 15px;
+  width: 500px;
+  height: 150px;
+}
+main form .form-group {
+  margin: 10px;
+}
+main form .form-group input[type=text], main form .form-group input[type=password] {
+  outline: none;
+}/*# sourceMappingURL=reg.css.map */
